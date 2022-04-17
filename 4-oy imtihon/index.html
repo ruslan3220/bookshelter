@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <title></title>
+</head>
+<body id="body">
+
+
+    <!-- HEADER  -->
+    <header class="header ">
+      <!-- NAVBAR  -->
+       <div class="container px-0">
+        <nav class="navbar">
+            <div class="container-fluid px-0">
+              <a class="navbar-brand"><img src="./images/Group 193.svg" alt="LOGO" width="156" height="43"></a>
+              <form id="form" class="d-flex justify-content-between">
+                <input id="search_input" class="form-control bg-light rounded-pill" style="width: 600px" type="search" placeholder="Search" aria-label="Search">
+              </form>
+              <button class="d-flex star_btn justify-content-end bg-white border-0 p-0" type="button"><img src="./images/Group 182.jpg" alt="Star" width="35" height="35"></button>
+            </div>
+        </nav>
+      </div>
+      <!-- RESULTS  -->
+        <hr class="my-0" style="opacity: 0.1;">
+        <div class="container mt-2 px-0">
+          <div class="d-flex align-items-center">
+            <p class="mx-auto m-0" style="font-weight: 600;">Showing <span id="count-books">0</span> Result(s)</p>
+            <button class="new_books navbar-brand bg-secondary rounded d-flex  gap-2 p-2 mx-0" style="opacity: 0.7;"><img class="mx-0 px-0" src="./images/calendar 1.svg" alt="calendar"> <p class="m-0" style="color: #fff;">Order by newest</p></button>
+          </div>
+        </div>
+        <hr class="mt-2" style="opacity: 0.1;">
+        <!-- MODAL -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+         <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+       </div>
+          <div class="offcanvas-body">
+            <ul id="wrapper_modal"> </ul>
+          </div>
+        </div>
+    </header>
+    <!-- MAIN  -->
+    <main>
+        <section class="hero ">
+          <div class="container">
+            <div class="row ">
+              <!-- BOOKMARK  -->
+              <div class="col-md-3 px-1 mt-4">
+                <h2>Bookmarks</h2>
+                <p >If you don't like to read, you haven't found the right book</p>
+                <div class="card bookshelf bg-light p-3 mb-2 border-0">
+                  <div>
+                    <h5 class="m-0">Phyton</h5>
+                    <p class="m-0">David M. Beazley</p>
+                  </div>
+                 <div class="wrap gap-2 ">
+                  <span><img src="./images/book-open 1.svg" alt="book" width="24" height="24"></span>
+                  <span ><img src="./images/delete 1.svg" alt="delete"></span>
+                 </div>
+                <div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- BOOKS  -->
+               <div class="col-md-9 wrapper bg-light p-4" id="dark_books">
+                <!-- <div  class="row d-flex flex-nowrap"> -->
+                  <ul class="m-0 p-0" id="wrapper"></ul>
+                </div>
+
+                <!-- PAGINATION  -->
+                <div class="mt-4 d-flex justify-content-center mb-4">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">...</a></li>
+                      <li class="page-item"><a class="page-link" href="#">9</a></li>
+                      <li class="page-item"><a class="page-link" href="#">10</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+    </main>
+    <!-- FOOTER  -->
+    <footer class="footer">
+
+    </footer>
+    <!-- BOOKSTEMPLATE -->
+    <template id="template">
+
+        <div class="row box row-cols-3 d-flex flex-wrap g-3 ">
+          <div class="col ">
+            <div class="card border-0 py-3 px-2 ">
+              <div class="p-3 bg-light rounded">
+                <img
+                src="http://picsum.photos/200"
+                class="card-img-top"
+              />
+              </div>
+              <div class="card-body py-0 mt-2">
+                <h5 class="card-title  my-0 fw-bolder text-danger">Phyton</h5>
+                <p class="card-text  my-0 card-author">David M. Beazley</p>
+                <p class="card-text  my-0 card-year">2009</p>
+              </div>
+                <div class="d-flex justify-content-sm-between gap-1 mx-3 mt-1">
+                  <button class="btn btn-warning bookmark-btn">Bookmark</button>
+                  <button id="more_btn" class="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">More Info</button>
+                </div>
+                <a id="read_link" target="_blank" class=" btn btn-secondary mx-3 mt-2 card-link">Read</a>
+            </div>
+          </div>
+
+        </div>
+
+
+    </template>
+    <!-- MODALTEMPLATE  -->
+    <template id="templateModal">
+      <div class="card p-3 border-0">
+        <img class="card-img-top p-5" src="http://picsum.photos/50/50" alt="books">
+        <p class="card-description"> </p>
+        <p> Author: <span class="bg-info rounded-pill py-1 px-3 card-author">Ruslan</span></p>
+        <p> Published: <span class="bg-info rounded-pill py-1 px-3 card-year">200</span></p>
+        <p> Publishers: <span class="bg-info rounded-pill py-1 px-3 card-type">Ruslan</span></p>
+        <p> Categories: <span class="bg-info rounded-pill py-1 px-3 card-categories">botany</span></p>
+        <p> Pages Count: <span class="bg-info rounded-pill py-1 px-3 card-cound">566</span></p>
+
+        <a id="read_link" target="_blank" class=" btn btn-secondary mt-2 card-link">Read</a>
+      </div>
+    </template>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

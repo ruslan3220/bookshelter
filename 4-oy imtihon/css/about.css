@@ -1,0 +1,17 @@
+.bookshelf{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.wrap{
+    margin-left: 60px;
+}
+.dark_body{
+    background-color: dimgrey;
+    color: greenyellow;
+}
+
+.itemlist{
+    display: flex;
+    flex-direction: row;
+}
